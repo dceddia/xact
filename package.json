@@ -1,0 +1,11 @@
+{
+  "name": "xact",
+  "version": "1.0.0",
+  "description": "Add entries to a Ledger file",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dave Ceddia",
+  "license": "MIT"
+}
