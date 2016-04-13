@@ -7,5 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dave Ceddia",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "dateformat-light": "^1.0.14",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
 }
