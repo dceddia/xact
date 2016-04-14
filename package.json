@@ -1,13 +1,16 @@
 {
   "name": "xact",
-  "version": "1.0.0",
-  "description": "Add entries to a Ledger file",
+  "version": "0.0.1",
+  "description": "Add entries to a Ledger CLI file",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dave Ceddia",
   "license": "MIT",
+  "bin": {
+    "xact": "bin/xact"
+  },
   "dependencies": {
     "dateformat-light": "^1.0.14",
     "minimist": "^1.2.0"

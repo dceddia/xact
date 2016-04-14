@@ -5,6 +5,13 @@ var transactionTypes = [{
   provides: {
     fromAccount: 'Liabilities:Credit Card:CapitalOne'
   }
+}, {
+  name: 'lunch',
+  provides: {
+    fromAccount: 'Liabilities:Credit Card:CapitalOne',
+    reason: 'Lunch',
+    toAccount: 'Expenses:Food:Lunch'
+  }
 }]
 
 function getTransactionType(name) {
@@ -24,7 +31,8 @@ function buildTransaction(argv) {
   var txType = getTransactionType(argv._[0]);
 
   if(!txType || !txType.provides) {
-    throw new Error("Transaction type found no matches: " + argv._[0]);
+    var validTxTypes = transactionTypes.map(tx => `  ${tx.name}\n`);
+    throw new Error("Transaction type found no matches: " + argv._[0] + "\n" + "Transaction types:\n" + validTxTypes);
   }
 
   var txn = {
@@ -34,9 +42,10 @@ function buildTransaction(argv) {
     toAccount: txType.provides.toAccount
   };
 
-  txn.reason = txn.reason || argv._[1];
-  txn.amount = txn.amount || argv._[2];
-  txn.toAccount = txn.toAccount || argv._[3];
+  var nextArg = 1;
+  txn.reason = txn.reason || argv._[nextArg++];
+  txn.amount = txn.amount || argv._[nextArg++];
+  txn.toAccount = txn.toAccount || argv._[nextArg++];
 
   if(!txn.reason || typeof txn.amount === 'undefined' || !txn.toAccount) {
     throw new Error("Usage: <txnType> reason amount toAccount");

@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+try {
+  require('../main');
+} catch(e) {
+  console.log(e.message);
+}
