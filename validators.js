@@ -68,7 +68,7 @@ function buildTransaction(argv) {
 
 function buildLedgerEntry(txn) {
   var entry = '';
-  var todayDate = dateFormat(Date.now(), 'mm/dd/yyyy');
+  var todayDate = dateFormat(Date.now(), 'yyyy/mm/dd');
   var fromAccount = txn.fromAccount;
 
   // Pad the account with spaces
